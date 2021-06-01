@@ -47,8 +47,8 @@ The kernel code is as following:
 ```c++
 __attribute__((task))
 kernel void vector_sum(__global float* restrict a,
-					   __global float* restrict b,
-                	   __global float* restrict res, unsigned int length) {
+                       __global float* restrict b,
+                       __global float* restrict res, unsigned int length) {
 	
 	#pragma unroll
 	for(int i = 0; i < length; i++)
@@ -85,5 +85,5 @@ Available arguments:
 * vec-num: number of vectors;
 * vec-len: length of each vector.
 
-***Example***: CL_CONTEXT_EMULATOR_DEVICE_INTELFPGA=1 bin/host -vec-num=4 -vec-len=16
+***Example***: CL_CONTEXT_EMULATOR_DEVICE_INTELFPGA=1 bin/host -vec-num=4 -vec-len=16<br/>
 Using these arguments set the host to compute the addition of 4 vectors of 16 elements.
